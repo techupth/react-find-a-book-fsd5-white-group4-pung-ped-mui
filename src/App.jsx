@@ -10,8 +10,7 @@ function App() {
       const result = await axios.get(
         `https://www.googleapis.com/books/v1/volumes?q=${text}`
       );
-      console.log(result);
-      setSearchResult(result.data.items);
+      setSearchResult(result.data?.items ?? []);
     } catch (error) {
       console.log(error);
     }
